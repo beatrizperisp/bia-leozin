@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Você 💖</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #d63384;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .contador {
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #ff4b5c;
+        }
+        .fotos img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            margin: 10px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .mensagem {
+            font-size: 18px;
+            font-style: italic;
+            color: #444;
+            margin: 20px 0;
+        }
+        .footer {
+            font-size: 14px;
+            color: #666;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Para a pessoa mais especial do mundo 💕</h1>
+        <p class="mensagem">Desde o momento em que nos conhecemos, cada segundo tem sido mágico. Obrigado por iluminar minha vida! 🥰</p>
+        
+        <div class="contador" id="contador"></div>
+        
+        <div class="fotos">
+            <img src="foto1.jpg" alt="Nosso momento especial">
+            <img src="foto2.jpg" alt="Nosso sorriso juntos">
+            <img src="foto3.jpg" alt="Nosso amor">
+        </div>
+        
+        <p class="footer">Feito com ❤️ só para você!</p>
+    </div>
+
+    <script>
+        function atualizarContador() {
+            let dataInicio = new Date("2023-02-14T00:00:00"); // Defina a data especial aqui
+            let agora = new Date();
+            let diferenca = agora - dataInicio;
+            let dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+            let horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
+            let minutos = Math.floor((diferenca / (1000 * 60)) % 60);
+            let segundos = Math.floor((diferenca / 1000) % 60);
+            document.getElementById("contador").innerHTML = `Estamos juntos há ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos! ❤️`;
+        }
+        setInterval(atualizarContador, 1000);
+        atualizarContador();
+    </script>
+</body>
+</html>
